@@ -10,8 +10,6 @@ import javax.media.opengl.glu.GLU;
 import javax.media.opengl.glu.GLUquadric;
 
 /**
- *
- * @author Diand
  */
 public class Objek {
 
