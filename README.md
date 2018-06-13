@@ -1,10 +1,9 @@
 # proyek-grafis
 Project for exam pemograman grafis
 
-TI14KB67 PEMROGRAMAN GRAFIS C
-/b
-participant
-/b
- - Arif Akbar D P [151-111-094]
- - Catura Bagastra M R [151-111-112]
- - Wahyu Try I [151-111-126]
+## TI14KB67 PEMROGRAMAN GRAFIS C
+
+### participant:
+ - [Arif Akbar D P](https://github.com/Aconkun/) [151-111-094]
+ - [Catura Bagastra M R](https://github.com/DewaCopz/) [151-111-112]
+ - [Wahyu Try I](https://github.com/wahyuimansyah/) [151-111-126]
