@@ -10,6 +10,8 @@ import javax.media.opengl.glu.GLU;
 import javax.media.opengl.glu.GLUquadric;
 
 /**
+ *
+ * @author wahyu
  */
 public class Objek {
 
@@ -52,7 +54,7 @@ public class Objek {
         gl.glPushMatrix();
         gl.glRotatef(-20.0f, 1.0f, 0.0f, 0.0f);
         gl.glRotatef(70.0f, 0.0f, 1.0f, 1.0f);
-        gl.glTranslated(0.0f, 0.0f, BODY_RADIUS - 0.6f * LIMB_RADIUS);
+        gl.glTranslated(0.0f, 0.0f, BODY_RADIUS - 0.8f * LIMB_RADIUS);
         glu.gluSphere(q, LIMB_RADIUS - 0.2f, SLICES, STACKS);
         gl.glPopMatrix();
         gl.glPushMatrix();
