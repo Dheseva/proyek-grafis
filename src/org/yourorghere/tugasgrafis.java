@@ -14,14 +14,20 @@ import javax.media.opengl.glu.GLU;
 import javax.media.opengl.glu.GLUquadric;
 import static org.yourorghere.Objek.drawHorn;
 
-
-public class mainp implements GLEventListener {
+/**
+ * Tugas4.java <BR>
+ * author: Brian Paul (converted to Java by Ron Cemer and Sven Goethel)
+ * <P>
+ *
+ * This version is equal to Brian Paul's version 1.2 1999/10/21
+ */
+public class tugasgrafis implements GLEventListener {
 
     public static void main(String[] args) {
-        Frame frame = new Frame("Grafis");
+        Frame frame = new Frame("Tugas 4");
         GLCanvas canvas = new GLCanvas();
 
-        canvas.addGLEventListener(new mainp());
+        canvas.addGLEventListener(new tugasgrafis());
         frame.add(canvas);
         frame.setSize(640, 480);
         final Animator animator = new Animator(canvas);
@@ -80,7 +86,7 @@ public class mainp implements GLEventListener {
     }
 
     float angle = 0;
-    float direction = 1;
+    float direction = 5;
 
     // static dimensions    
     private static final float BODY_LENGTH = 3.0f;
@@ -107,7 +113,7 @@ public class mainp implements GLEventListener {
         try {
             Thread.sleep(100);
         } catch (InterruptedException ex) {
-            Logger.getLogger(mainp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(tugasgrafis.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         GL gl = drawable.getGL();
@@ -157,7 +163,7 @@ public class mainp implements GLEventListener {
         gl.glDisable(GL.GL_CLIP_PLANE2);
 
         //horn
-        drawHorn(gl, glu, q);
+        //drawHorn(gl, glu, q);
 
         // eyes
         gl.glColor3f(1.0f, 1.0f, 1.0f);
@@ -174,7 +180,7 @@ public class mainp implements GLEventListener {
         gl.glPopMatrix();
         gl.glPushMatrix();
         gl.glTranslatef(-(BODY_RADIUS + LIMB_RADIUS + 0.1f), 0.0f, BODY_LENGTH - LIMB_RADIUS);
-        gl.glRotatef(40, 1.0f, 0.0f, 0.0f);
+        //gl.glRotatef(40, 1.0f, 0.0f, 0.0f);
         Objek.drawLimb(gl, glu, q, ARM_SWING);
 
         // Draw legs
@@ -182,17 +188,22 @@ public class mainp implements GLEventListener {
         gl.glPushMatrix();
         gl.glTranslatef(BODY_RADIUS - LIMB_RADIUS * 2.0f, 0.0f, 0.2f);
 
+        gl.glRotatef(angle, 1, 0, 0); //kaki
         Objek.drawLimb(gl, glu, q, ARM_SWING);
+        angle += direction;
+        if (angle >= 25 || angle <= -25) {
+            direction = -direction;
+        }
 
         gl.glPopMatrix();
         gl.glPushMatrix();
         gl.glTranslatef(-(BODY_RADIUS - LIMB_RADIUS * 2.0f), 0.0f, 0.2f);
 
-        gl.glRotatef(-angle, 1, 0, 0);
+        gl.glRotatef(-angle, 1, 0, 0); //kaki
         Objek.drawLimb(gl, glu, q, -ARM_SWING);
         angle += direction;
-        if (angle >= 45 || angle <= -45) {
-            direction = -direction;
+        if (angle >= 25 || angle <= -25) {
+            direction = direction;
         }
 
         gl.glPopMatrix();
