@@ -205,7 +205,7 @@ public class GLRenderer implements GLEventListener {
         try {
             Thread.sleep(100);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Pertemuan8.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Grafisuas.class.getName()).log(Level.SEVERE, null, ex);
         }
         GL gl = drawable.getGL();
         GLU glu = new GLU();
