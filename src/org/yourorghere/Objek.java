@@ -11,7 +11,7 @@ import javax.media.opengl.glu.GLUquadric;
 
 /**
  *
- * @author wahyu
+ * @author WAHYU
  */
 public class Objek {
 
@@ -38,6 +38,19 @@ public class Objek {
 
     static void drawLimb(GL gl, GLU glu, GLUquadric q, float swing) {
         // arm or leg
+        float amb[] = {1f, 0f, 0f, 1};
+        float diff[] = {0.41f, 0.41f, 0.41f, 1};
+        float spec[] = {0.11f, 0.11f, 0.11f, 1};
+        float shine = 200;
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_AMBIENT, amb, 0);
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_DIFFUSE, diff, 0);
+
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_SPECULAR, spec, 0);
+        gl.glMaterialf(GL.GL_FRONT_AND_BACK,
+                GL.GL_SHININESS, shine);
         gl.glPushMatrix();
         gl.glRotatef(swing, 1.0f, 0.0f, 0.0f);
         glu.gluSphere(q, LIMB_RADIUS, SLICES, STACKS);
@@ -51,6 +64,19 @@ public class Objek {
     }
 
     static void drawEyes(GL gl, GLU glu, GLUquadric q) {
+        float amb[] = {0f, 0f, 1f, 1};
+        float diff[] = {0.41f, 0.41f, 0.41f, 1};
+        float spec[] = {0.11f, 0.11f, 0.11f, 1};
+        float shine = 200;
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_AMBIENT, amb, 0);
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_DIFFUSE, diff, 0);
+
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_SPECULAR, spec, 0);
+        gl.glMaterialf(GL.GL_FRONT_AND_BACK,
+                GL.GL_SHININESS, shine);
         gl.glPushMatrix();
         gl.glRotatef(-20.0f, 1.0f, 0.0f, 0.0f);
         gl.glRotatef(70.0f, 0.0f, 1.0f, 1.0f);
@@ -67,6 +93,19 @@ public class Objek {
     }
 
     static void drawHorn(GL gl, GLU glu, GLUquadric q) {
+        float amb[] = {0f, 1f, 0f, 1};
+        float diff[] = {0.41f, 0.41f, 0.41f, 1};
+        float spec[] = {0.11f, 0.11f, 0.11f, 1};
+        float shine = 200;
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_AMBIENT, amb, 0);
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_DIFFUSE, diff, 0);
+
+        gl.glMaterialfv(GL.GL_FRONT_AND_BACK,
+                GL.GL_SPECULAR, spec, 0);
+        gl.glMaterialf(GL.GL_FRONT_AND_BACK,
+                GL.GL_SHININESS, shine);
         gl.glPushMatrix();
         gl.glRotatef(10.0f, 1.0f, 0.0f, 0.0f);
         gl.glRotatef(30.0f, 0.0f, 1.0f, 1.0f);
