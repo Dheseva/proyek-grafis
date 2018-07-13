@@ -71,7 +71,7 @@ public class Grafisuas extends JFrame {
         addKeyListener(mylisterner);
         animator = new Animator(canvas);
         this.setLocationRelativeTo(null);
-        this.setSize(1200, 800);
+        this.setSize(1240, 960);
         animator = new Animator(canvas);
         // This is a workaround for the GLCanvas not adjusting its
 
