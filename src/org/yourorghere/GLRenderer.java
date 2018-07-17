@@ -346,14 +346,7 @@ public class GLRenderer implements GLEventListener {
         } //panah bawah
         else if (keyCode == 40) {
             vectorMovement(vertikal, 2f, -1f);
-        } //tombol spasi
-        else if (keyCode == 32) {
-            if (silinder) {
-                silinder = false;
-            } else {
-                silinder = true;
-            }
-        } //tombol enter
+        }//tombol enter
         else if (keyCode == 10) {
             if (kamera) {
                 kamera = false;
